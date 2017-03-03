@@ -26,6 +26,10 @@ module Capstone1CoreApi
     # default ORM are we using with scaffold
     config.generators {|g| g.orm :active_record}
     #config.generators {|g| g.orm :mongoid}
-    
+
+    # Only loads a smaller set of middleware suitable for API only apps.
+    # Middleware like session, flash, cookies can be added back manually.
+    # Skip views, helpers and assets when generating a new resource.
+    config.api_only = true
   end
 end
