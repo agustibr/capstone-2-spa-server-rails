@@ -1,0 +1,33 @@
+development:
+  clients:
+    default:
+      database: capstone1_core_api_development
+      hosts:
+        - <%= ENV['MONGO_HOST'] ||= "localhost:27017" %>
+      options:
+  options:
+    
+test:
+  clients:
+    default:
+      database: capstone1_core_api_test
+      hosts:
+        - <%= ENV['MONGO_HOST'] ||= "localhost:27017" %>
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
+
+staging:
+  clients:
+    default:
+      uri: <%= ENV['MLAB_URI'] %>
+      options:
+        connect_timeout: 15
+        
+production:
+  clients:
+    default:
+      uri: <%= ENV['MLAB_URI'] %>
+      options:
+        connect_timeout: 15
