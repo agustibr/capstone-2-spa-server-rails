@@ -3,8 +3,6 @@ Rails.application.routes.draw do
     resources :cities
     resources :states
   end
-
-  get '/ui' => 'ui#index'
-  get '/ui#' => 'ui#index'
-  root 'ui#index'
+  
+  root to: redirect("https://agustibr.github.io/capstone-2-spa-client-angular/dist")
 end

@@ -34,7 +34,7 @@ module Capstone1CoreApi
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do 
-        origins '*'
+        origins 'https://agustibr.github.io'
 
         resource '/api/*',
           headers: :any,

@@ -1,2 +1,0 @@
-class UiController < ApplicationController
-end
